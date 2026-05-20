@@ -26,25 +26,38 @@ const buscar = async (req, res) => {
     res.json(item).status(200).end();
 };
 
-const atualizar = async (req, res) => {
-    const { id } = req.params;
-    const dados = req.body;
-    
-    const item = await prisma.estadia.update({
-        where: { id : Number(id) },
-        data: dados
-    });
+const atualizar = async(req,res)=>{
+const { id } = req.params
+const dados = req.body
 
-    res.json(item).status(200).end();
-};
+if(dados.saida){
+    const estadia = await prisma.estadia.findUnique({
+    where:{
+    id:Number(id)
+    }
+    })
+
+const entrada = new Date(estadia.entrada)
+const saida = new Date(dados.saida)
+
+const horas = (saida-entrada) / (1000*60*60)
+    dados.valorTotal = Number((horas*estadia.valorHora).toFixed(2))
+}
+const item = await prisma.estadia.update({
+    where:{
+    id:Number(id)
+},
+    data:dados
+
+})
+res.json(item)
+}
 
 const excluir = async (req, res) => {
     const { id } = req.params;
-    
     const item = await prisma.estadia.delete({
         where: { id : Number(id) }
     });
-
     res.json(item).status(200).end();
 };
 

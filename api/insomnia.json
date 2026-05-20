@@ -97,7 +97,7 @@
       ],
       "name": "Excluir",
       "method": "DELETE",
-      "url": "http://localhost:3000/automovel/excluir/:id"
+      "url": "http://localhost:3000/automovel/excluir/:placa"
     },
     {
       "_id": "fld_Estadia",
