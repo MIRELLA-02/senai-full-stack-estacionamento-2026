@@ -10,152 +10,100 @@
 </head>
 
 <body>
-
 <header>
-
     <h1>Estacionamento ACME</h1>
-
     <p>Controle de veículos e estadias</p>
-
 </header>
 
-<main class="container">
+    <main class="container">
+        <section class="card">
+        <h2>Cadastrar Veículo</h2>
+    <form id="formAutomovel">
+    <input type="text" id="placa" placeholder="Placa" required>
+    <input type="text" id="proprietario" placeholder="Proprietário" required>
+    <input type="text" id="tipo" placeholder="Tipo" required>
+    <input type="text" id="modelo" placeholder="Modelo" required>
+    <input type="text" id="marca" placeholder="Marca">
+    <input type="text" id="cor" placeholder="Cor">
+    <input type="number" id="ano" placeholder="Ano">
+    <input type="text" id="telefone" placeholder="Telefone">
+    <button type="submit">Cadastrar Veículo</button>
+    </form>
+    </section>
 
-<section class="card">
 
-<h2>Cadastrar Veículo</h2>
+    <section class="card">
+    <h2>Veículos Cadastrados</h2>
+    <table>
+    <thead>
+        <tr>
+        <th>Placa</th>
+        <th>Modelo</th>
+         <th>Marca</th>
+        <th>Cor</th>
+        <th>Ano</th>
+        <th>Ações</th>
+    </tr>
+    </thead>
 
-<form id="formAutomovel">
+    <tbody id="listaAutomoveis">
+    </tbody>
+    </table>
+    </section>
 
-<input type="text" id="placa" placeholder="Placa" required>
+    <section class="card">
+    <h2>Nova Estadia</h2>
+    <form id="formEstadia">
 
-<input type="text" id="proprietario" placeholder="Proprietário" required>
+    <input
+    type="text"
+    id="placaEstadia"
+    placeholder="Placa do veículo"
+    required>
 
-<input type="text" id="tipo" placeholder="Tipo" required>
-
-<input type="text" id="modelo" placeholder="Modelo" required>
-
-<input type="text" id="marca" placeholder="Marca">
-
-<input type="text" id="cor" placeholder="Cor">
-
-<input type="number" id="ano" placeholder="Ano">
-
-<input type="text" id="telefone" placeholder="Telefone">
-
-<button type="submit">
-
-Cadastrar Veículo
-
-</button>
-
-</form>
-
+    <input
+    type="number"
+    id="valorHora"
+    placeholder="Valor hora"
+    required>
+    <button type="submit">Registrar Entrada</button>
+    </form>
 </section>
 
+    <section class="card">
+    <h2>Estadias</h2>
+    <table>
+    <thead>
+    <tr>
 
-<section class="card">
+    <th>ID</th>
 
-<h2>Veículos Cadastrados</h2>
+    <th>Placa</th>
 
-<table>
+    <th>Entrada</th>
 
-<thead>
+    <th>Saída</th>
 
-<tr>
+    <th>Total</th>
 
-<th>Placa</th>
+    <th>Ações</th>
 
-<th>Modelo</th>
+    </tr>
 
-<th>Marca</th>
+    </thead>
 
-<th>Cor</th>
+    <tbody id="listaEstadias">
 
-<th>Ano</th>
+    </tbody>
 
-<th>Ações</th>
+    </table>
 
-</tr>
+    </section>
 
-</thead>
+    </main>
 
-<tbody id="listaAutomoveis">
+    <script src="script.js"></script>
 
-</tbody>
+    </body>
 
-</table>
-
-</section>
-
-
-<section class="card">
-
-<h2>Nova Estadia</h2>
-
-<form id="formEstadia">
-
-<input
-type="text"
-id="placaEstadia"
-placeholder="Placa do veículo"
-required>
-
-<input
-type="number"
-id="valorHora"
-placeholder="Valor hora"
-required>
-
-<button type="submit">
-
-Registrar Entrada
-
-</button>
-
-</form>
-
-</section>
-
-
-<section class="card">
-
-<h2>Estadias</h2>
-
-<table>
-
-<thead>
-
-<tr>
-
-<th>ID</th>
-
-<th>Placa</th>
-
-<th>Entrada</th>
-
-<th>Saída</th>
-
-<th>Total</th>
-
-<th>Ações</th>
-
-</tr>
-
-</thead>
-
-<tbody id="listaEstadias">
-
-</tbody>
-
-</table>
-
-</section>
-
-</main>
-
-<script src="script.js"></script>
-
-</body>
-
-</html>
+    </html>
